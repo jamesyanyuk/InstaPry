@@ -1,0 +1,13 @@
+<ui-gmap-google-map center="map.center" zoom="map.zoom" options="map.options" events="map.events">
+  <ui-gmap-marker coords="mainMarker" idkey="'mainMarker.id'" options="markerOptions.mainMarker" events="mainMarker.events"></ui-gmap-marker>
+  <ui-gmap-markers models="igMarkers" idkey="igMarkers.id" coords="'coords'" idkey="igMarkers.id" options="markerOptions.igMarkers"></ui-gmap-markers>
+</ui-gmap-google-map>
+
+<div class="photoContainer">
+  <span class="photoContainerText" ng-hide="resultsAvailable">Photos will display here...</span>
+  <div class="photoContainerInner" ng-show="resultsAvailable">
+    <a ng-repeat="img in imageSources" ng-click="openLightboxModal($index)">
+      <img ng-src="{{img.url}}" style="height: 196px"/>
+    </a>
+  </div>
+</div>
